@@ -1,0 +1,35 @@
+.dropdown{
+        padding: 10px;
+        font-size: 1.3rem;
+        color: black;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        cursor: pointer;
+}
+
+.number{
+    appearance: none;
+}
+
+.dropdown:hover, 
+.dropdown:focus{
+    /* background-color: #c5c6c7; */
+    background-size: 2rem;
+    outline: none;
+}
+
+.dropdown{
+    width: 90%;
+}
+
+@media (max-width: 650px){
+    .dropdown{
+        width: 90%;
+    }
+}
+
+
+    
+    
+    
+    
