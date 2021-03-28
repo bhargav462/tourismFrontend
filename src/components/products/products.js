@@ -5,7 +5,7 @@ import land1 from './../../assets/images/tajmahalp1.jpg';
 import land2 from './../../assets/images/tajmahalp2.jpg';
 import land3 from './../../assets/images/tajmahalp3.jpg';
 import land4 from './../../assets/images/tajmahalp1.jpg';
-import Dropdown from './../../utils/dropdown/dropdown'
+import Dates from './../../utils/Datepicker/datepicker';
 
 class CardLayout extends Component{
 
@@ -26,7 +26,8 @@ class CardLayout extends Component{
                         </select>
                         <input min="0" placeholder="No. of days(min)" className={[classes["input"],classes["number"]].join(' ')} type="number" required />
                         <input min="0" placeholder="No. of days(max)" className={[classes["input"],classes["number"]].join(' ')} type="number" required />
-                        <input placeholder="Month of Travel" className={classes["input"]} type="number" required />
+                        {console.log("maxDate",this.maxDate)}
+                        <Dates/>
                         <button className={classes["searchButton"]}>Search</button>
                     </div> 
                 </div>

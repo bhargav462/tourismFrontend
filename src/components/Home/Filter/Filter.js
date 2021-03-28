@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import classes from './Filter.module.css';
 import Dropdown from './../../../utils/dropdown/dropdown'
+import DatePicker from '../../../utils/Datepicker/datepicker'
 
 class Filter extends Component{
 
@@ -19,7 +20,7 @@ class Filter extends Component{
                   <div className={classes["days"]}>
                       <input min="0" placeholder="No. of days(min)" className={[classes["input"],classes["number"]].join(' ')} type="number" required />
                       <input min="0" placeholder="No. of days(max)" className={[classes["input"],classes["number"]].join(' ')} type="number" required />
-                      <input placeholder="Month of Travel" className={classes["input"]} type="number" required />
+                      <DatePicker />
                   </div>
                    
                   <div className={classes["search"]}>
