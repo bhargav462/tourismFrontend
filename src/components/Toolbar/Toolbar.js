@@ -43,6 +43,9 @@ class Toolbar extends Component{
                                     <li className={classes["nav-link"]} >
                                         <a className={classes["a"]} href="#">Contact Us</a>
                                     </li>
+                                    <li className={classes["nav-link"]} >
+                                        <a className={classes["a"]} href="/reviews">Reviews</a>
+                                    </li>
                                 </ul>
                             </div>
 
