@@ -15,5 +15,9 @@ export default function validateInfo(values){
         errors.feedback = "feedback is required"
     }
 
+    if(values.rating === 0){
+        errors.rating = "Please give your rating"
+    }
+
     return errors;
 }

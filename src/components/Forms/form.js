@@ -3,6 +3,7 @@ import useForm from './useForm/useForm'
 import validate from './useForm/validateInfo'
 import {Link} from 'react-router-dom';
 import classes from './form.module.css';
+import StarRating from 'react-rating-stars-component'
 
 const AddCrop = () => {
 
@@ -10,8 +11,8 @@ const AddCrop = () => {
             console.log("Submit Form")
         }
 
-        const {handleChange,values,handleSubmit,errors,disabled} = useForm(submitForm,validate);
-        
+        const {handleChange,handleRating,values,handleSubmit,errors,disabled} = useForm(submitForm,validate);
+
         return (
             <div className={`${classes["register-container"]} ${classes.check}`} >
                 <form onSubmit={handleSubmit} className={classes["form"]}>
@@ -51,7 +52,7 @@ const AddCrop = () => {
                         <label htmlFor="feedback" >
                              <b style={{fontSize:'25px'}}>Feedback</b>
                         </label>
-                        <input
+                        <textarea
                             id="feedback"
                             type="text"
                             name="feedback"
@@ -59,8 +60,26 @@ const AddCrop = () => {
                             placeholder="Enter your feedback"
                             value={values.feedback}
                             onChange={handleChange}
+                            rows="4"
                         />
                         {errors.feedback && <p className={classes["warning"]}>{errors.feedback}</p>}
+                    </div>
+                    <div>
+                        <label htmlFor="feedback" >
+                             <b style={{fontSize:'25px'}}>Feedback</b>
+                        </label>
+                        <StarRating
+                            count={5}
+                            onChange={handleRating}
+                            size={54}
+                            isHalf={true}
+                            emptyIcon={<i className="far fa-star"></i>}
+                            halfIcon={<i className="fa fa-star-half-alt"></i>}
+                            fullIcon={<i className="fa fa-star"></i>}
+                            activeColor="#ffd700"
+                            name="rating"
+                        />
+                        {errors.rating && <p className={classes["warning"]}>{errors.rating}</p>}
                     </div>
                     
 

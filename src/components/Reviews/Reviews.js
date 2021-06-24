@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import classes from './Reviews.module.css'
 import swal from 'sweetalert'
+import ReactStars from 'react-rating-stars-component'
 
 class Reviews extends Component
 {
@@ -47,6 +48,19 @@ class Reviews extends Component
                             </div>
                             <div className={classes["content"]}>
                                 <p>{feedback.feedback}</p>
+                            </div>
+                            <div>
+                              <ReactStars
+                                count={5}
+                                size={54}
+                                isHalf={true}
+                                value={feedback.rating}
+                                emptyIcon={<i className="far fa-star"></i>}
+                                halfIcon={<i className="fa fa-star-half-alt"></i>}
+                                fullIcon={<i className="fa fa-star"></i>}
+                                activeColor="#ffd700"
+                                edit={false}
+                              />
                             </div>
                         </div>
                       )

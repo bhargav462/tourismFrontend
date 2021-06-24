@@ -6,7 +6,8 @@ const useForm = (callback,validate,EnableButton,DisableButton) => {
     const [values,setValues] = useState({
         Name: "",
         place: "",
-        feedback: ""
+        feedback: "",
+        rating: 0
     })
 
     const [disabled,setDisabled] = useState(false)
@@ -22,6 +23,13 @@ const useForm = (callback,validate,EnableButton,DisableButton) => {
         [name] : value
       })
         // console.log(value)
+    }
+
+    const handleRating = newRating => {
+      setValues({
+        ...values,
+        ["rating"]: newRating
+      })
     }
 
     const handleSubmit = e => {
@@ -51,7 +59,8 @@ const useForm = (callback,validate,EnableButton,DisableButton) => {
             body: JSON.stringify({
               name: values.Name,
               place: values.place,
-              feedback: values.feedback
+              feedback: values.feedback,
+              rating: values.rating
             })
           }).then(ress => {
             return ress.json()
@@ -64,7 +73,8 @@ const useForm = (callback,validate,EnableButton,DisableButton) => {
                 setValues({
                   Name: "",
                   place: "",
-                  feedback: ""
+                  feedback: "",
+                  rating: 0
                 })
                 setIsSubmitting(false)
           }).catch((error) => {
@@ -76,7 +86,7 @@ const useForm = (callback,validate,EnableButton,DisableButton) => {
         }
     },[errors])
 
-    return {handleChange,values,handleSubmit,errors,disabled};
+    return {handleChange,handleRating,values,handleSubmit,errors,disabled};
 }
 
 export default useForm;
